@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../res/app_styles.dart';
 import '../res/media.dart';
+import '../widgets/view_all.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,51 +17,52 @@ class HomeScreen extends StatelessWidget {
           height: 48,
         ),
         Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Good morning', style: AppStyles.head3),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text('Book Tickets', style: AppStyles.head1),
-                        ],
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              image: AssetImage(AppMedia.imageLogo)),
-                        ),
-                      )
-                    ]),
-                const SizedBox(height: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Good morning', style: AppStyles.head3),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text('Book Tickets', style: AppStyles.head1),
+                  ],
+                ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  width: 50,
+                  height: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xFFF4F6FD),
-                  ),
-                  child: const Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(FluentSystemIcons.ic_fluent_search_regular,
-                          color: Color(0xFFBFC200)),
-                      Text('Search'),
-                    ],
+                    image: const DecorationImage(
+                        image: AssetImage(AppMedia.imageLogo)),
                   ),
                 )
-              ],
-            ))
+              ]),
+              const SizedBox(height: 25),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFFF4F6FD),
+                ),
+                child: const Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(FluentSystemIcons.ic_fluent_search_regular,
+                        color: Color(0xFFBFC200)),
+                    Text('Search'),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        const SizedBox(height: 40),
+        const ViewAll(bigText: 'Upcoming Flights',)
       ]),
     );
   }
